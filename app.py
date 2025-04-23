@@ -50,18 +50,18 @@ if st.button("Predict"):
         pdf.add_page()
         pdf.set_font("helvetica",style="BU", size=20)
 
-        pdf.cell(200, 10, text="Asthma Diagnosis Report", new_x="LMARGIN", new_y="NEXT", align="C")
+        pdf.cell(200, 10, text="Asthma Diagnosis Report", ln=True, align="C")
         pdf.set_font("helvetica", size=12)
 
-        pdf.cell(200, 10, text=f"Patient Name: {patient_name}", new_x="LMARGIN", new_y="NEXT")
-        pdf.cell(200, 10, text=f"Age: {int(patient_age)}", new_x="LMARGIN", new_y="NEXT")
-        pdf.cell(200, 10, text=f"Gender: {patient_gender}", new_x="LMARGIN", new_y="NEXT")
-        pdf.cell(200, 10, text=f"Diagnosis: {diagnosis}", new_x="LMARGIN", new_y="NEXT")
+        pdf.cell(200, 10, text=f"Patient Name: {patient_name}", ln=True)
+        pdf.cell(200, 10, text=f"Age: {int(patient_age)}", ln=True)
+        pdf.cell(200, 10, text=f"Gender: {patient_gender}", ln=True)
+        pdf.cell(200, 10, text=f"Diagnosis: {diagnosis}", ln=True)
 
         if diagnosis == "The Patient is Asthma Positive":
             pdf.cell(200, 10, text="Positive Symptoms:", ln=True)
             for symp in positive_symptoms:
-                pdf.cell(200, 10, text=f"° {symp}", new_x="LMARGIN", new_y="NEXT")
+                pdf.cell(200, 10, text=f"° {symp}", ln=True)
 
         # Save and offer download
         with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:
