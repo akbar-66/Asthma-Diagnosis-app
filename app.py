@@ -59,7 +59,7 @@ if st.button("Predict"):
         pdf.cell(200, 10, text=f"Diagnosis: {diagnosis}", new_x="LMARGIN", new_y="NEXT")
 
         if diagnosis == "The Patient is Asthma Positive":
-            pdf.cell(200, 10, text="Positive Symptoms:", new_x="LMARGIN", new_y="NEXT")
+            pdf.cell(200, 10, text="Positive Symptoms:", ln=True)
             for symp in positive_symptoms:
                 pdf.cell(200, 10, text=f"° {symp}", new_x="LMARGIN", new_y="NEXT")
 
